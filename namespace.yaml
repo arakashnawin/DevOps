@@ -1,0 +1,15 @@
+Namespace
+==========
+apiVersion: v1
+kind: Namespace
+metadata:
+   name: demo
+   labels:
+     name: development
+
+$ kubectl get ns
+$ kubectl get pods -n demo
+$ kubectl apply -f pod1.yml -n demo
+$ kubectl delete -f pod1.yml -n demo
+$ kubectl config set-context $(kubectl config current-context) --namespace=demo
+$ kubectl config view | grep namespace:
