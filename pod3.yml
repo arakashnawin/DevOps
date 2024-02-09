@@ -1,1 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+   name: environments
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo $ORG-$SESSION; sleep 5 ; done"]
+      env:               # List of environment variables to be used inside the pod
+      - name: ORG
+        value: WEZVATECH
+      - name: SESSION
+        value: PODS
 
+$ kubectl exec environments -- env
