@@ -3,7 +3,7 @@ Namespace
 apiVersion: v1
 kind: Namespace
 metadata:
-   name: demo
+   name: demo_app
    labels:
      name: development
 
