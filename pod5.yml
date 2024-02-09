@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: labelspod
+  labels:                               # Specifies the Label details under it
+    myname: ADAM
+    myorg: WEZVATECH
+spec:
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-Adam; sleep 5 ; done"]
+
+$ kubectl get pods --show-labels
+$ kubectl get pods -l myname=ADAM
+$ kubectl label pods testpod myname=student
+$ kubectl get pods -l myname!=ADAM
+$ kubectl get pods -l 'myname in (ADAM, student)'
+$ kubectl get pods -l 'myname notin (ADAM, student)'
+$ kubectl delete pod -l 'myname in (ADAM, student)'
