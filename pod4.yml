@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: portexpose
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+       - containerPort: 80 
+  
+
+$ curl <podIP>:80
